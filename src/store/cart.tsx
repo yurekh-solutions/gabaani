@@ -17,7 +17,6 @@ export interface CartItem {
 interface CartContextValue {
   items: CartItem[];
   drawerOpen: boolean;
-  checkoutOpen: boolean;
   subtotal: number;
   count: number;
   freeShippingRemaining: number;
@@ -26,8 +25,6 @@ interface CartContextValue {
   setQty: (productId: string, sizeLabel: string | undefined, qty: number) => void;
   openDrawer: () => void;
   closeDrawer: () => void;
-  openCheckout: () => void;
-  closeCheckout: () => void;
   clearCart: () => void;
 }
 
@@ -48,7 +45,6 @@ export function productById(id: string): Product {
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   const addItem = (product: Product, sizeLabel?: string, unitPrice?: number) => {
     setItems((prev) => {
@@ -95,7 +91,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value: CartContextValue = {
     items,
     drawerOpen,
-    checkoutOpen,
     subtotal,
     count,
     freeShippingRemaining,
@@ -104,11 +99,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setQty,
     openDrawer: () => setDrawerOpen(true),
     closeDrawer: () => setDrawerOpen(false),
-    openCheckout: () => {
-      setDrawerOpen(false);
-      setCheckoutOpen(true);
-    },
-    closeCheckout: () => setCheckoutOpen(false),
     clearCart: () => setItems([]),
   };
 

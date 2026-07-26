@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FREE_SHIPPING_THRESHOLD, formatPrice } from "../data/products";
 import { productById, useCart } from "../store/cart";
 
 export default function CartDrawer() {
+  const navigate = useNavigate();
   const {
     items,
     drawerOpen,
@@ -11,7 +13,6 @@ export default function CartDrawer() {
     freeShippingRemaining,
     setQty,
     removeItem,
-    openCheckout,
   } = useCart();
 
   useEffect(() => {
@@ -160,7 +161,10 @@ export default function CartDrawer() {
               Shipping & taxes calculated at checkout. COD available.
             </p>
             <button
-              onClick={openCheckout}
+              onClick={() => {
+                closeDrawer();
+                navigate("/checkout");
+              }}
               className="w-full bg-cocoa text-cream py-4 text-xs tracking-[0.22em] uppercase font-bold hover:bg-honey-deep transition-colors"
             >
               Checkout · {formatPrice(subtotal)}
