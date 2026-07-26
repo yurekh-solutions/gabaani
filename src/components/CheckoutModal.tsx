@@ -221,7 +221,7 @@ export default function CheckoutModal() {
                       role="radio"
                       aria-checked={method === m.id}
                       onClick={() => setMethod(m.id)}
-                      className={`border px-2 py-3 text-xs font-semibold transition-colors ${
+                      className={`flex flex-col items-center justify-center gap-1 border px-2 py-3 min-h-[64px] text-xs font-semibold text-center leading-tight transition-colors ${
                         method === m.id
                           ? "border-cocoa bg-cocoa text-cream"
                           : m.highlight
@@ -229,7 +229,8 @@ export default function CheckoutModal() {
                           : "border-cocoa/30 hover:border-cocoa"
                       }`}
                     >
-                      {m.icon} {m.label}
+                      <span className="text-base leading-none">{m.icon}</span>
+                      {m.label}
                     </button>
                   ))}
                 </div>

@@ -19,7 +19,7 @@ function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
 
   return (
-    <article className="group flex flex-col bg-white/60 border border-sand hover:shadow-[0_8px_30px_rgba(43,32,22,0.1)] transition-shadow">
+    <article className="group flex flex-col h-full bg-white/60 border border-sand hover:shadow-[0_8px_30px_rgba(43,32,22,0.1)] transition-shadow">
       <Link
         to={`/product/${product.id}`}
         className="relative block overflow-hidden text-left hover-swap-img"
@@ -63,7 +63,8 @@ function ProductCard({ product }: { product: Product }) {
           {product.name}
         </Link>
         <p className="text-xs text-cocoa-soft mt-0.5 line-clamp-1">{product.tagline}</p>
-        <div className="mt-2 flex items-baseline gap-2">
+        {/* Price + button pinned to bottom so all cards in a row align */}
+        <div className="mt-auto pt-3 flex items-baseline gap-2">
           <span className="font-semibold">{formatPrice(product.price)}</span>
           {product.compareAtPrice && (
             <span className="text-cocoa-soft line-through text-sm">

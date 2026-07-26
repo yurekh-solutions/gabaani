@@ -218,7 +218,8 @@ function Bestsellers() {
                 </div>
                 <Link to={`/product/${p.id}`} className="font-display text-lg sm:text-xl mt-1.5 leading-snug hover:text-honey-deep transition-colors">{p.name}</Link>
                 <p className="text-xs text-cocoa-soft mt-0.5 line-clamp-1">{p.tagline}</p>
-                <div className="mt-2 flex items-baseline gap-2">
+                {/* Price + button pinned to bottom so all cards in a row align */}
+                <div className="mt-auto pt-3 flex items-baseline gap-2">
                   <span className="font-semibold">{formatPrice(p.price)}</span>
                   {p.compareAtPrice && (
                     <span className="text-cocoa-soft line-through text-sm">{formatPrice(p.compareAtPrice)}</span>
