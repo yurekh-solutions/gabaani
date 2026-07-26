@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://gabaani.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/models/hero-model.png</image:loc>
+      <image:title>GABAANI honey infused haircare</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/shop</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gabaani.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/models/story-garden.png</image:loc>
+      <image:title>GABAANI Golden Garden</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/honey-infused-hair-oil</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/honey-infused-hair-oil.png</image:loc>
+      <image:title>GABAANI Honey Infused Hair Oil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/honey-lip-oil</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/honey-lip-oil.png</image:loc>
+      <image:title>GABAANI Honey Lip Oil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/repairing-hair-mask</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/repairing-hair-mask.png</image:loc>
+      <image:title>GABAANI Repairing Hair Mask</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/honey-infused-hair-perfume-duo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/honey-infused-hair-perfume-duo.png</image:loc>
+      <image:title>GABAANI Honey Infused Hair Perfume Duo</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/pearl-glow-body-oil</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/pearl-glow-body-oil.png</image:loc>
+      <image:title>GABAANI Pearl Glow Body Oil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/golden-ritual-gift-set</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/golden-ritual-gift-set.png</image:loc>
+      <image:title>GABAANI Golden Ritual Gift Set</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gabaani.com/product/honey-propolis-gift-collection</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://gabaani.com/images/honey-propolis-gift-collection.png</image:loc>
+      <image:title>GABAANI Honey Propolis Gift Collection</image:title>
+    </image:image>
+  </url>
+</urlset>

@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * GABAANI design system — warm honey / cream editorial beauty.
+ * oklch semantic tokens + legacy aliases for backward compat.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-honey: var(--honey);
+  --color-blush: var(--blush);
+  --color-cream: var(--cream);
+
+  /* Legacy aliases (keep existing components working) */
+  --color-cocoa: var(--foreground);
+  --color-cocoa-soft: var(--muted-foreground);
+  --color-cream-dark: var(--muted);
+  --color-sand: var(--accent);
+  --color-honey-deep: oklch(0.62 0.13 62);
+
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.983 0.012 84.5);
+  --foreground: oklch(0.27 0.035 55);
+  --card: oklch(0.995 0.006 84.5);
+  --card-foreground: oklch(0.27 0.035 55);
+  --popover: oklch(0.995 0.006 84.5);
+  --popover-foreground: oklch(0.27 0.035 55);
+  --primary: oklch(0.32 0.048 52);
+  --primary-foreground: oklch(0.985 0.012 84.5);
+  --secondary: oklch(0.95 0.023 85);
+  --secondary-foreground: oklch(0.32 0.048 52);
+  --muted: oklch(0.955 0.018 85);
+  --muted-foreground: oklch(0.53 0.032 60);
+  --accent: oklch(0.93 0.035 78);
+  --accent-foreground: oklch(0.32 0.048 52);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.985 0.012 84.5);
+  --border: oklch(0.9 0.022 82);
+  --input: oklch(0.9 0.022 82);
+  --ring: oklch(0.72 0.09 75);
+  --honey: oklch(0.74 0.115 74);
+  --blush: oklch(0.9 0.043 24);
+  --cream: oklch(0.965 0.018 86);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* Legacy font-display class */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Carousel scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Fade up animation */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+/* Image zoom hover */
+@keyframes subtle-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+/* Crossfade for hover image swap */
+.hover-swap-img {
+  position: relative;
+  overflow: hidden;
+}
+.hover-swap-img .img-main,
+.hover-swap-img .img-hover {
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+.hover-swap-img .img-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.hover-swap-img:hover .img-main {
+  transform: scale(1.06);
+}
+.hover-swap-img:hover .img-hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Cursor-follow zoom for product detail */
+.zoom-cursor {
+  cursor: zoom-in;
+}
+.zoom-cursor img {
+  transition: transform 0.15s ease-out;
+}
